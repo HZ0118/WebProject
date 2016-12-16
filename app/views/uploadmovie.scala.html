@@ -1,0 +1,23 @@
+
+@import helper._
+
+@(uploadMovieForm: Form[models.Movies])
+@main("Upload Movie") {
+
+    @form(action = routes.HomeController.uploadMovieSubmit(), 'class -> "form-horizontal", 'role->"form") {
+
+        @inputText(uploadMovieForm("name"), '_label -> "Name",'class -> "form-control")
+        @inputText(uploadMovieForm("genre"), '_label -> "Genre",'class -> "form-control")
+        @inputText(uploadMovieForm("studio"), '_label -> "Studio",'class -> "form-control")
+        @inputText(uploadMovieForm("realeaseYear"), '_label -> "Release Year",'class -> "form-control")
+        @inputText(uploadMovieForm("rating"), '_label -> "Rating",'class -> "form-control")
+
+            <div class="actions">
+                <input type="submit" value="Save" class="btn btn-primary">
+                    <a href="@routes.HomeController.movies()"><button class="btn btn-warning">Cancel</button>
+                    </a>
+                </div>
+    }
+
+
+}

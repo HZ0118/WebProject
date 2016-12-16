@@ -1,0 +1,23 @@
+
+@import helper._
+
+@(uploadMangaForm: Form[models.Manga])
+@main("Upload Manga") {
+
+  @form(action = routes.HomeController.uploadMangaSubmit(), 'class -> "form-horizontal", 'role->"form") {
+
+    @inputText(uploadMangaForm("name"), '_label -> "Name",'class -> "form-control")
+    @inputText(uploadMangaForm("genre"), '_label -> "Genre",'class -> "form-control")
+    @inputText(uploadMangaForm("studio"), '_label -> "Studio",'class -> "form-control")
+    @inputText(uploadMangaForm("realeaseYear"), '_label -> "Release Year",'class -> "form-control")
+    @inputText(uploadMangaForm("rating"), '_label -> "Rating",'class -> "form-control")
+
+    <div class="actions">
+      <input type="submit" value="Save" class="btn btn-primary">
+      <a href="@routes.HomeController.manga()"><button class="btn btn-warning">Cancel</button>
+      </a>
+    </div>
+  }
+
+
+}

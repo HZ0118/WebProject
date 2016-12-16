@@ -1,0 +1,95 @@
+.page-header {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+nav {
+  margin-top: 0;
+}
+
+footer {
+    background-color: #222;
+    color: #888;
+    text-align: center;
+    padding: 10px;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+margin: 0 auto; 
+width:400px;
+margin-bottom: 10px;
+margin-top: 50px;
+}
+
+.checkbox {
+    margin-bottom: 20px;
+}
+
+.upload {
+    height: 32px;
+    width: 428px;
+}
+
+.status {
+    height: 32px;
+    width: 428px;
+}
+
+
+.genre {
+    display: table-cell;
+    width: 250px;
+    vertical-align: top;
+    border: 1px solid silver;
+    margin: 5px;
+    margin-bottom: 30px;
+}
+
+.genre div {
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #222;
+}
+
+.genre a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+.series {
+    display: table-cell;
+    width: 900px;
+    vertical-align: top;
+    border: 1px solid silver;
+    margin: 5px;
+}
+
+.series_list{
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #222;
+}
+
+.series_item span {
+    display: table-cell;
+    font-size: 12px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+body {
+    margin-bottom: 100px;
+}

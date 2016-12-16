@@ -1,0 +1,63 @@
+@(movies: List[models.Movies])
+
+  @main("Anime Movies") {
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-2">
+      <div class="well">
+        <h4>Anime Movies</h4>
+      </div>
+    </div>
+    <div class="col-sm-10">
+
+        @if(flash.containsKey("success")) {
+            <div class="alert alert-success">
+                @flash.get("success")
+            </div>
+        }
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Genre</th>
+                    <th>Studio</th>
+                    <th>Release Year</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+              @for(m <- movies) {
+                <tr>
+                    <td class="numeric">@m.getId</td>
+                    <td>@m.getName</td>
+                    <td>@m.getGenre</td>
+                    <td>@m.getStudio</td>
+                    <td class="numeric">@m.getRealeaseYear</td>
+                    <td class="numeric">@m.getRating</td>
+                    <!-- Delete a product from stock -->
+                    <td>
+                        <a href="@routes.HomeController.deleteMovie(m.getId)" class="btn-xs btn-danger" onclick="return confirmDel();">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+              }
+            </tbody>
+        </table>
+        <p>
+            <a href="@routes.HomeController.uploadmovie()">
+                <button class="btn btn-primary">Upload a Movie</button>
+            </a>
+        </p>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        function confirmDel() {
+            return confirm('Are you sure?');
+        }
+    </script>
+  }
